@@ -233,7 +233,7 @@ This project helped in understanding:
 
 ## Author
 
-**Mustafa**  
+**Qurrat Al Ain**  
 MUET CS Project
 
 ---
