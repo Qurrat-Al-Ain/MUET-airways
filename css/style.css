@@ -1,0 +1,476 @@
+STYLE.CSS
+
+
+/* 1. THEME VARIABLES */
+:root {
+    --primary-blue: #003580;
+    --light-grey: #f4f7f6;
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --soft-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. GENERAL RESET */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', 'Segoe UI', sans-serif; 
+}
+
+body {
+    background-color: var(--light-grey);
+    color: var(--black);
+    /* Add padding so content doesn't hide behind fixed header */
+    padding-top: 0; 
+}
+
+/* 3. STICKY WHITE HEADER */
+.main-header {
+    background-color: var(--white);
+    padding: 10px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Fixed/Sticky position settings */
+    position: sticky; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    /* Subtle bottom shadow */
+    box-shadow: var(--soft-shadow);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    height: 45px; /* Size of the university logo */
+    width: auto;
+    display: block;
+}
+
+/* 4. NAVIGATION LINKS */
+.nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* 5. LOGIN BUTTON (Blue Outline) */
+.login-btn {
+    border: 2px solid var(--primary-blue);
+    padding: 8px 20px !important;
+    border-radius: 6px;
+    color: var(--primary-blue) !important;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-blue);
+    color: var(--white) !important;
+}
+
+/* 6. HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url('https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 7. BOOKING CONTAINER (Blue Box) */
+.booking-container {
+    background: rgba(0, 53, 128, 0.9); /* Your deep blue tint */
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    color: var(--white);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.booking-container h2 { margin-bottom: 20px; font-weight: 700; }
+
+.input-group { text-align: left; margin-bottom: 15px; }
+
+.input-group label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-size: 12px; 
+    font-weight: 600; 
+    color: var(--white); 
+}
+
+.booking-container input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--black); /* Keep text dark when user types */
+}
+
+/* 8. SEARCH BUTTON */
+.btn-search {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-search:hover {
+    background-color: var(--light-grey);
+    transform: scale(1.02);
+}
+
+/* 9. FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 13px;
+    background-color: var(--white);
+    border-top: 1px solid #eee;
+}/* Container & Summary */
+.results-container { width: 85%; max-width: 1200px; margin: 40px auto; min-height: 60vh; }
+
+.search-summary { margin-bottom: 30px; }
+.search-summary h2 { color: var(--primary-blue); font-size: 28px; }
+.search-summary span { font-weight: 700; color: #555; }
+
+/* Grid Layout */
+.flight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* Individual Flight Card */
+.flight-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.flight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* Card Styling Parts */
+.card-header {
+    background: #f8f9fa;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.flight-no { font-weight: 700; color: var(--primary-blue); font-size: 14px; }
+.airline-tag { background: var(--primary-blue); color: white; font-size: 10px; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; }
+
+.card-body { padding: 25px 20px; text-align: center; }
+
+.route { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.point h3 { font-size: 20px; margin-bottom: 5px; color: var(--black); }
+.point p { font-size: 12px; color: #888; text-transform: uppercase; }
+.plane-icon { font-size: 20px; color: #ddd; }
+
+.card-footer {
+    padding: 20px;
+    background: #fff;
+    border-top: 1px dashed #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-section { color: #28a745; font-weight: 700; }
+.amount { font-size: 24px; }
+
+.book-now-btn {
+    background: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.book-now-btn:hover { background: #00265c; }
+
+.no-results { grid-column: 1 / -1; text-align: center; padding: 50px; background: white; border-radius: 15px; }
+/* Ticket List Container */
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* The Boarding Pass Card */
+.boarding-pass {
+    display: flex;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    min-height: 200px;
+}
+
+/* Main Section of Ticket */
+.ticket-main {
+    flex: 3;
+    padding: 25px;
+    border-right: 2px dashed #eee; /* The "tear-off" line */
+    position: relative;
+}
+
+.ticket-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.airline-name { font-weight: 800; color: var(--primary-blue); text-transform: uppercase; }
+.boarding-group { font-size: 11px; color: #888; border: 1px solid #ddd; padding: 2px 8px; border-radius: 4px; }
+
+/* Route Styling */
+.ticket-route { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; padding: 0 40px; }
+.loc h1 { font-size: 32px; color: var(--black); margin-bottom: 2px; }
+.loc p { font-size: 12px; color: #888; text-transform: uppercase; }
+
+.path { flex-grow: 1; text-align: center; position: relative; padding: 0 20px; }
+.path .line { height: 2px; background: #eee; width: 100%; position: absolute; top: 50%; z-index: 1; }
+.path .plane-icon { position: relative; z-index: 2; background: white; padding: 0 10px; }
+
+/* Info Grid */
+.ticket-info { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.info-block label { display: block; font-size: 10px; color: #aaa; font-weight: 700; margin-bottom: 4px; }
+.info-block span { font-size: 14px; color: var(--black); font-weight: 600; }
+
+/* Ticket Stub (Right Side) */
+.ticket-stub {
+    flex: 1;
+    background: #fcfcfc;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stub-info label { font-size: 10px; color: #aaa; font-weight: 700; }
+.stub-info span { font-size: 14px; color: var(--primary-blue); font-weight: 700; }
+
+.barcode {
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(90deg, #000 5%, transparent 5%, transparent 10%, #000 10%, #000 15%, transparent 15%, transparent 20%, #000 20%, #000 40%, transparent 40%, transparent 45%, #000 45%, #000 50%, transparent 50%, transparent 60%, #000 60%, #000 80%, transparent 80%, transparent 85%, #000 85%);
+    margin: 15px 0;
+}
+
+.cancel-btn {
+    background: #fff;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-btn:hover { background: #ff4d4d; color: #fff; }
+/* Login Page Wrapper */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+/* The White Login Card */
+.login-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft depth shadow */
+    text-align: center;
+}
+
+.login-mini-logo {
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.login-header h2 {
+    color: var(--black);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Form Elements */
+.login-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 53, 128, 0.1);
+}
+
+/* Extras */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.form-options a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+/* The Primary Blue Button */
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #00265c;
+    transform: translateY(-2px);
+}
+
+.auth-footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+
+.auth-footer a {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+/* Centering wrapper for both Login and Register */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+/* Focused card design matching your previous request */
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.login-mini-logo { height: 35px; margin-bottom: 20px; }
+
+.login-form { text-align: left; }
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Primary Corporate Blue Button */
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #003580; /* Your primary blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover { background-color: #00265c; transform: translateY(-2px); }
+
+.auth-footer { margin-top: 25px; font-size: 14px; color: #777; }
