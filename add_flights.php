@@ -6,6 +6,7 @@ include('../db.php');
 session_start();
 if($_SESSION['role'] != 'STAFF') { header("Location: ../login.php"); exit(); }
 
+
 if(isset($_POST['add_flight'])) {
     $airline = $_POST['airline'];
     $dep_time = $_POST['dep_time'];
