@@ -58,32 +58,7 @@ MUET-airways/
 ├── css/
 │   └── style.css
 │
-├── images/
-│   └── logo.png
-│
-└── screenshots/
-```
-
----
-
-## Screenshots
-
-### Homepage
-(Add homepage screenshot here)
-
-### Login Page
-(Add login screenshot here)
-
-### Registration Page
-(Add registration screenshot here)
-
-### Flight Search
-(Add flight search screenshot here)
-
-### My Tickets
-(Add booking screenshot here)
-
----
+└── 
 
 ## Installation Guide
 
